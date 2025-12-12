@@ -1,4 +1,5 @@
 public class Contact {
+    //class variables
     private String firstName;
     private String lastName;
     private String address;
@@ -8,6 +9,7 @@ public class Contact {
     private String phoneNumber;
     private String email;
 
+    //Constructor to initialize the contact details
     public Contact(String firstName, String lastName, String address, String city,
                    String state, String zip, String phoneNumber, String email) {
         this.firstName = firstName;
