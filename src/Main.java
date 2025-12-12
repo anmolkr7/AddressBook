@@ -13,7 +13,8 @@ public class Main {
             System.out.println("1. Add Contact");
             System.out.println("2. Edit Contact");
             System.out.println("3. View Contacts");
-            System.out.println("4. Exit");
+            System.out.println("4. Delete Contact");
+            System.out.println("5. Exit");
 
             System.out.print("Enter choice: ");
             int choice=Integer.parseInt(sc.nextLine());
@@ -65,6 +66,12 @@ public class Main {
                     break;
 
                 case 4:
+                    System.out.print("Enter first name of contact to delete: ");
+                    String deleteName=sc.nextLine();
+                    addressBook.deleteContact(deleteName);
+                    break;
+
+                case 5:
                     isRunning=false;
                     break;
 
