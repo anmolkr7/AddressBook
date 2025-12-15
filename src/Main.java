@@ -22,38 +22,51 @@ public class Main {
             switch(choice) {
 
                 case 1:
-                    // Taking input from console for UC2
-                    System.out.println("\nEnter Contact Details:");
+                    // UC5: Ability to add multiple contacts
+                    boolean addMore=true;
 
-                    System.out.print("First Name: ");
-                    String firstName = sc.nextLine();
+                    while(addMore) {
+                        // Taking input from console for UC2
+                        System.out.println("\nEnter Contact Details:");
 
-                    System.out.print("Last Name: ");
-                    String lastName = sc.nextLine();
+                        System.out.print("First Name: ");
+                        String firstName = sc.nextLine();
 
-                    System.out.print("Address: ");
-                    String address = sc.nextLine();
+                        System.out.print("Last Name: ");
+                        String lastName = sc.nextLine();
 
-                    System.out.print("City: ");
-                    String city = sc.nextLine();
+                        System.out.print("Address: ");
+                        String address = sc.nextLine();
 
-                    System.out.print("State: ");
-                    String state = sc.nextLine();
+                        System.out.print("City: ");
+                        String city = sc.nextLine();
 
-                    System.out.print("Zip: ");
-                    String zip = sc.nextLine();
+                        System.out.print("State: ");
+                        String state = sc.nextLine();
 
-                    System.out.print("Phone Number: ");
-                    String phone = sc.nextLine();
+                        System.out.print("Zip: ");
+                        String zip = sc.nextLine();
 
-                    System.out.print("Email: ");
-                    String email = sc.nextLine();
+                        System.out.print("Phone Number: ");
+                        String phone = sc.nextLine();
 
-                    // Creating new Contact object
-                    Contact contact = new Contact(firstName, lastName, address, city, state, zip, phone, email);
+                        System.out.print("Email: ");
+                        String email = sc.nextLine();
 
-                    // Adding to AddressBook
-                    addressBook.addContact(contact);
+                        // Creating new Contact object
+                        Contact contact = new Contact(firstName, lastName, address, city, state, zip, phone, email);
+
+                        // Adding to AddressBook
+                        addressBook.addContact(contact);
+
+                        //Asking whether to continue adding contacts or to exit
+                        System.out.print("Do you want to add another contact? (yes/no): ");
+                        String option=sc.nextLine();
+
+                        if(!option.equalsIgnoreCase("yes")) {
+                            addMore=false;
+                        }
+                    }
                     break;
                 case 2:
                     System.out.print("Enter first name of contact to edit: ");
